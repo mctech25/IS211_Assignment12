@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add Quiz</title>
+
+    </head>
+
+    <body>
+
+    <h1>Add A Quiz</h1>
+
+    <form action="/quiz/add" method="POST">
+        <label>Quiz Subject</label><br />
+        <input type="text" name="quiz_subject" /><br /><br />
+        <label># of Questions</label><br />
+        <input type="number" name="num_questions" /><br /><br />
+        <label>Date Taken</label><br />
+        <input type="datetime-local" name="quiz_date" /><br /><br />
+
+        <input type="submit" value="Add Quiz" />
+    </form>
+
+    </body>
+</html>
