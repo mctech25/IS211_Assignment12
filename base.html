@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Management System</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        .flash { color: red; }
+    </style>
+</head>
+<body>
+    {% if session.logged_in %}
+        <nav>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a> |
+            <a href="{{ url_for('add_student') }}">Add Student</a> |
+            <a href="{{ url_for('add_quiz') }}">Add Quiz</a> |
+            <a href="{{ url_for('add_result') }}">Add Quiz Result</a>
+        </nav>
+    {% endif %}
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    {% block content %}{% endblock %}
+</body>
+</html>
